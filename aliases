@@ -1,0 +1,44 @@
+# aliases for directories
+alias pd='~/Programming/InProgress'
+alias vd='~/Programming/devops/vagrant'
+alias sbnip='~/Programming/utils/snips'
+alias ncf='/usr/local/etc/nginx'
+alias nbin='/usr/local/Cellar/nginx/1.4.3'
+alias nlog='/usr/local/Cellar/nginx/1.4.3/logs'
+alias installog=~/Programming/devops/install_logs/
+alias pgconfdir="~/Library/Containers/com.heroku.postgres/Data/Library/Application\ Support/Postgres/var"
+
+
+# shortcut
+alias py=python
+alias gdt='git difftool'
+alias tf='tail -f'
+alias vzr='vi ~/.zshrc'
+alias szr='source ~/.zshrc'
+alias mochac='mocha --compilers coffee:coffee-script'
+alias pc='pbcopy'
+alias dt='py.test'
+alias more=less
+alias sc='supervisorctl'
+alias sd='supervisord'
+alias ve='VIRTUAL_ENV'
+alias clst='python manage.py collectstatic --noinput'
+alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm `pwd`'
+
+# combine of shell commands
+alias findthisdir='find . -type f -name "*.py" | xargs grep'
+alias lth='ll -t|head'
+
+using_proxy() {
+        export http_proxy=http://127.0.0.1:8118
+        export https_proxy=https://127.0.0.1:8118
+        $*
+        unset http_proxy && unset https_proxy
+}
+alias pr=using_proxy
+
+# Local config
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
+
+
