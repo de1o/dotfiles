@@ -39,7 +39,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
-set ts=4 sts=4 sw=4 expandtab
 
 " Only do this part when compiled with support for autocommands
 " Source the vimrc file after saving it
@@ -47,15 +46,23 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
-filetype plugin on
 syntax on
+set ruler
 set number
 set hidden
-colorscheme desert
+set hlsearch
+set incsearch
 set gfn=Monaco:h13
-
+set ts=4 sts=4 sw=4 expandtab
 set wrap lbr nolist
 set showbreak=...
+set ignorecase
+set smartcase
+set title
+set scrolloff=3
+colorscheme desert
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 
 vmap <D-j> gj
 vmap <D-k> gk
