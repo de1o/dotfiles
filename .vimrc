@@ -38,8 +38,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
+set gfn=Monaco:h13
 set ts=4 sts=4 sw=4 expandtab
+set vb t_vb=
 
 " Only do this part when compiled with support for autocommands
 " Source the vimrc file after saving it
@@ -52,7 +53,6 @@ syntax on
 set number
 set hidden
 colorscheme desert
-set gfn=Monaco:h13
 
 set wrap lbr nolist
 set showbreak=...
@@ -75,3 +75,15 @@ augroup resCur
   autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set backspace=2		" more powerful backspacing
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
