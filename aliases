@@ -24,6 +24,7 @@ alias sd='supervisord'
 alias ve='VIRTUAL_ENV'
 alias clst='python manage.py collectstatic --noinput'
 alias pycharm='/Applications/PyCharm.app/Contents/MacOS/pycharm `pwd`'
+alias wo='workon'
 
 # combine of shell commands
 alias findthisdir='find . -type f -name "*.py" | xargs grep'
